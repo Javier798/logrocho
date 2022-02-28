@@ -1,0 +1,37 @@
+.card {
+    width: 50%;
+    border: none;
+    -webkit-box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    border-radius: 1rem;
+}
+#container{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-header {
+    position: relative;
+    padding: 2rem;
+    border-bottom: none;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+    z-index: 2;
+}
+.text-primary, .text-primary-hover:hover {
+    color: #4650dd!important;
+}
+.card-body {
+    flex: 1 1 auto;
+    padding: 2rem;
+}
+.logo{
+    margin: 0 auto;
+    margin-top: 5%;
+}
+.loginIncorrecto{
+    color: red;
+}

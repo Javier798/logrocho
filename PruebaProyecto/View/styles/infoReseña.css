@@ -1,0 +1,95 @@
+#fotos div {
+    width: 34%;
+    height: 200px;
+}
+
+#fotos img {
+    width: 95%;
+    height: 150px;
+    cursor: pointer;
+}
+
+#fotos {
+    display: flex;
+    margin-top: 1%;
+}
+
+#mostrando {
+    width: 59%;
+    height: 470px;
+}
+#botones{
+    margin-top: 6%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#mostrando img {
+    width: 100%;
+    height: 470px;
+    border-radius: 50%;
+}
+
+#galeria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+#tituloPagina h3{
+    border-bottom: solid 1px black;
+    }
+    #tituloPagina{
+        width: 75%;
+        margin: 0 auto;
+        margin-top: 3%;
+        text-align: center;
+    }
+#parteSuperior {
+        margin: 5%;
+        display: flex;
+        margin-bottom: 3%;
+        justify-content: space-around;
+}
+
+#informacion {
+    max-width: 45%;
+}
+.imagenes{
+    position: absolute;
+}
+#mostrando{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#descripcion {
+    margin-top: 10%;
+}
+#mostrando{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#anadirImagen{
+    margin-top: 10%;
+  }
+#pincho {
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+#direccion input {
+    width: 100%;
+}
+#titulo{
+    display: flex;
+    gap: 30%;
+}
+#eliminar{
+    margin-top: 13%;
+}
+.papelera{
+    color: red;
+    cursor: pointer;
+}

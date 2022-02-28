@@ -1,0 +1,92 @@
+.rango {
+  width: 10%;
+}
+
+#contenedor {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: flex-end;
+  align-content: flex-end;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+#tabla {
+  width: 100%;
+  margin: 0 auto;
+}
+
+tr:hover {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+}
+#filtradoNota{
+  display: flex;
+  justify-content: center;
+}
+#filtros label{
+  font-size: 28px;
+}
+#titulo{
+  width: 100%;
+  text-align: right;
+  border-bottom: solid;
+  margin-bottom: 10px;
+}
+th i{
+  margin-left: 5px;
+}
+thead tr:hover {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0);
+}
+th p:hover{
+  cursor: pointer;
+}
+#buscador {
+  width: 20%;
+  height: 91%;
+}
+.cursor{
+  cursor: pointer;
+}
+#tabla h6 {
+  width: fit-content;
+  cursor: pointer;
+}
+
+#filtros {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#roles {
+  width: 20%;
+  margin-bottom: 6px;
+}
+
+#desde {
+  width: 10%;
+}
+
+#hasta {
+  width: 10%;
+}
+label{
+  margin-left: 2%;
+  margin-right: 1%;
+}
+#buscador input{
+  margin-left: 2%;
+  height: 100%;
+}
+#filtrosFiltrar {
+  width: 94%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#añadir button {
+  height: 90%;
+}

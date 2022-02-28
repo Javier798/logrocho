@@ -1,0 +1,32 @@
+.contact100-pic{
+    width: 55%;
+}
+.contact100-pic{
+    height: 305px;
+}
+.contact100-pic img{
+    height: 90%;
+}
+
+.wrap-contact100{
+    padding: 64px 101px 95px 71px;
+    align-items: center;
+}
+.loginIncorrecto{
+    color: red;
+}
+#fondo{
+    background-image: url(../img/fondoLoginFrontEnd.jpg);
+}
+#enviar{
+    background-color: #8a793ad6;
+}
+#enviar:hover{
+    background-color: #50451dd6;
+}
+.focus-input100 {
+    color:#8a793ad6;
+}
+.input100:focus + .focus-input100 + .symbol-input100 {
+    color: #8a793ad6;
+  }

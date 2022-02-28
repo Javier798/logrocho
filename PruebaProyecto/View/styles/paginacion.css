@@ -1,0 +1,14 @@
+.mostrarColumna{
+    display: block;
+}
+.ocultarColumna{
+    display: none;
+}
+#cantidad{
+    width: 10%;
+}
+#paginacion{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

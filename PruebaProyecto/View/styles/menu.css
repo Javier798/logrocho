@@ -1,0 +1,9 @@
+.nav-link{
+    color: rgba(255,255,255,.5);
+}
+.nav-link:hover{
+    color: white;
+}
+.navbar div{
+    display: flex;
+}
