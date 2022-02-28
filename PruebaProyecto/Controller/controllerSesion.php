@@ -1,5 +1,5 @@
 <?php
-const host = "localhost:3307";
+const host = "localhost:3306";
 const bdname = "logrocho";
 const user = "root";
 const password = "";

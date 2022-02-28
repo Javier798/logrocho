@@ -62,7 +62,11 @@ function anterior() {
     indice -= parseInt(numFilas);
     mostrarDatos();
 }
+function verMas() {
+    numFilas = 2;
 
+    mostrarDatos();
+}
 var itemAnterior = document.createElement("p");
 function ordenacion(item) {
     var tabla = document.querySelector('table');

@@ -31,6 +31,9 @@ thead tr:hover{
   border-bottom: solid;
   margin-bottom: 10px;
 }
+td .Descripcion{
+  width: 50%;
+}
 #buscador {
   width: 20%;
   height: 91%;

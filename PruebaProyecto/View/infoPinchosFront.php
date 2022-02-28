@@ -112,7 +112,7 @@
     </div>
     <div id="tituloPinchos">
         <h1>Pinchos</h1>
-        <button class="btn btn-success" id="anadirReseña" data-toggle="modal" data-target="#exampleModalCenter">Añadir reseña</button>
+        <button onclick="" class="btn btn-success" id="anadirReseña" data-toggle="modal" data-target="#exampleModalCenter">Añadir reseña</button>
     </div>
     <div id="bares">
     </div>

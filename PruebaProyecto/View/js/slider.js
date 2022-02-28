@@ -1,4 +1,5 @@
 let imagenes = ["../View/img/pinchoMejorValorado1.jpg", "../View/img/pinchoMejorValorado2.jpg", "../View/img/pinchoMejorValorado3.jpg"];
+let imagenesMejoresValoradas=[];
 let posicion = 0;
 let img = document.getElementById("imagenMostrada");
 let barras = document.getElementsByClassName("barra");
@@ -7,6 +8,18 @@ let mostrando = "favoritos";
 let funcionar = true;
 window.onload = () => {
     intervalo = crearIntervalo();
+    $.ajax({
+        method: "POST",
+        url: "imagenesMasValoradas",
+        success: function (response) {
+            bar = eval(response);
+            for (let i = 0; i < bar.length; i++) {
+                
+                imagenesMejoresValoradas.push(bar[i]);    
+            }
+            
+        }
+    });
     img.style.background = "url("+imagenes[0]+") no-repeat scroll center center";
 }
 
@@ -128,8 +141,8 @@ function cambiarRutas(item) {
             img.style.background = "url("+imagenes[0]+") no-repeat scroll center center";
         } else if (mostrando == "valorados") {
             mostrando = "favoritos";
-            
-            imagenes = ["../View/img/pinchoMejorValorado1.jpg", "../View/img/pinchoMejorValorado2.jpg", "../View/img/pinchoMejorValorado3.jpg"];
+            imagenes=imagenesMejoresValoradas;
+            //imagenes = ["../View/img/pinchoMejorValorado1.jpg", "../View/img/pinchoMejorValorado2.jpg", "../View/img/pinchoMejorValorado3.jpg"];
             img.style.background = "url("+imagenes[0]+") no-repeat scroll center center";
         }
         intervalo = crearIntervalo();    

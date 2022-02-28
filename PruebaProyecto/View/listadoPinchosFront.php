@@ -56,6 +56,9 @@
     </div>
     <div id="bares">
     </div>
+    <div id="flechita">
+        <button onclick="verMas()" id="verMas" class="btn btn-primary">Ver mas</button>
+    </div>
     <footer class="footer-07">
         <div class="container">
             <div class="row justify-content-center">
