@@ -165,6 +165,6 @@ function guardarImagenes() {
     });
     setTimeout(() => {
         window.location.reload();    
-    }, 100);
+    }, 300);
     
 }

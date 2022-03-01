@@ -222,7 +222,13 @@ class controllerApi
         array_push($datos, $ids);
         array_push($datos, $reseñas);
         echo json_encode($datos);
-    }
+    }    
+    /**
+     * getIdUsuario
+     * devuelve el id del usuario
+     * @param  mixed $email
+     * @return void
+     */
     public function getIdUsuario($email)
     {
         $gestor = new bd(Conexion::getConexion(host, bdname, user, password));
@@ -236,12 +242,13 @@ class controllerApi
     }
     /**
      * getBarDetalle
-     * deveulve un bar
+     * deveulve un bar con sus fotos y pinchos
      * @param  mixed $id
      * @return void
      */
     function getBarDetalle($id)
     {
+        header("Content-Type: application/json', 'HTTP/1.1 200 OK");
         $gestor = new bd(Conexion::getConexion(host, bdname, user, password));
         $result = $gestor->getBareDetalle($id);
         $barRes = [];
@@ -544,7 +551,16 @@ class controllerApi
         }
         echo json_encode($datos);
     }
-
+    
+    /**
+     * getResenasPorUsuarioLikeLimit
+     * devuelve las reseñas a las que el usuario les ha dado like
+     * @param  mixed $ordenacion
+     * @param  mixed $indice
+     * @param  mixed $cantidad
+     * @param  mixed $id
+     * @return void
+     */
     function getResenasPorUsuarioLikeLimit($ordenacion, $indice, $cantidad, $id)
     {
         $gestor = new bd(Conexion::getConexion(host, bdname, user, password));
@@ -593,7 +609,13 @@ class controllerApi
         }
         echo json_encode($datos);
     }
-    
+        
+    /**
+     * resBaresPinchos
+     * devuelve las reseñas por pincho
+     * @param  mixed $token
+     * @return void
+     */
     public function resBaresPinchos($token)
     {
         $gestor = new bd(Conexion::getConexion(host, bdname, user, password));
@@ -605,7 +627,7 @@ class controllerApi
         echo json_encode($datos);
     }
     /**
-     * getRese
+     * getReseñas
      * devuelve todas las reseñas
      * @return void
      */

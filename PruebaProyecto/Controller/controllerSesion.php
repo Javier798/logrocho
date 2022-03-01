@@ -1,8 +1,8 @@
 <?php
-const host = "localhost:3307";
-const bdname = "logrocho";
-const user = "root";
-const password = "";
+const host = "localhost";
+const bdname = "franciscojaviero_logrocho";
+const user = "franciscojaviero_franciscojaviero";
+const password = "vesper!2021";
 class controllerSesion
 {
     
@@ -36,6 +36,7 @@ class controllerSesion
      */
     function comprobarLogin($nombre, $contraseña)
     {
+        
         $apiController = new controllerApi();
         if(!$this->is_valid_email($nombre)){
             $_SESSION["respuestaLogin"] ="introduzca un email valido";
@@ -56,18 +57,21 @@ class controllerSesion
             "Contraseña=" => "sha1('" . $contraseña . "')"
         ];
         $gestor = new bd(Conexion::getConexion(host, bdname, user, password));
+       
 
         $resultado = $gestor->obtenerLogin($arrayFiltros);
+       
         if ($resultado->rowCount() == 0) {
             $respuesta = "Usuario o contraseña incorrectos";
             $_SESSION["respuestaLogin"] = $respuesta;
             header("Location: ".$ruta);
             return;
         } else {
-            echo "Bienvenido";
+            
             $_SESSION["usuario"] = $nombre;
             $_SESSION["codigo_usuaraio"]=$apiController->getIdUsuario($nombre);
             header("Location: " . $this->getRuta("/listadoBares", "/comprobarlogin"));
+           // var_dump($this->getRuta("/listadoBares", "/comprobarlogin"));
             return;
         }
     }
@@ -108,7 +112,6 @@ class controllerSesion
             header("Location: ".$ruta);
             return;
         } else {
-            echo "Bienvenido";
             $_SESSION["usuario"] = $nombre;
             $_SESSION["codigo_usuaraio"]=$apiController->getIdUsuario($nombre);
             
@@ -124,12 +127,12 @@ class controllerSesion
      */
     public function mostrarBares($accionActual)
     {
-        $usuarios = $this->getRuta("listadoUsuarios",$accionActual);
-        $reseñas= $this->getRuta("listadoResenas",$accionActual);
-        $pinchos= $this->getRuta("listadoPinchos",$accionActual);
-        $bares= $this->getRuta("listadoBares",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
-        $logOut= $this->getRuta("logOut",$accionActual);
+        $usuarios = $this->getRuta("/listadoUsuarios",$accionActual);
+        $reseñas= $this->getRuta("/listadoResenas",$accionActual);
+        $pinchos= $this->getRuta("/listadoPinchos",$accionActual);
+        $bares= $this->getRuta("/listadoBares",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
+        $logOut= $this->getRuta("/logOut",$accionActual);
         $error404=$this->getRuta("error404",$accionActual);
         $error500=$this->getRuta("error500",$accionActual);
         require("View/listadoBares.php");
@@ -142,10 +145,10 @@ class controllerSesion
      */
     public function mostrarPinchos($accionActual)
     {
-        $usuarios = $this->getRuta("listadoUsuarios",$accionActual);
-        $reseñas= $this->getRuta("listadoResenas",$accionActual);
-        $pinchos= $this->getRuta("listadoPinchos",$accionActual);
-        $bares= $this->getRuta("listadoBares",$accionActual);
+        $usuarios = $this->getRuta("/listadoUsuarios",$accionActual);
+        $reseñas= $this->getRuta("/listadoResenas",$accionActual);
+        $pinchos= $this->getRuta("/listadoPinchos",$accionActual);
+        $bares= $this->getRuta("/listadoBares",$accionActual);
         $contacto= $this->getRuta("contacto",$accionActual);
         $logOut= $this->getRuta("logOut",$accionActual);
         $error404=$this->getRuta("error404",$accionActual);
@@ -160,12 +163,12 @@ class controllerSesion
      */
     public function mostrarResenas($accionActual)
     {
-        $usuarios = $this->getRuta("listadoUsuarios",$accionActual);
-        $reseñas= $this->getRuta("listadoResenas",$accionActual);
-        $pinchos= $this->getRuta("listadoPinchos",$accionActual);
-        $bares= $this->getRuta("listadoBares",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
-        $logOut= $this->getRuta("logOut",$accionActual);
+        $usuarios = $this->getRuta("/listadoUsuarios",$accionActual);
+        $reseñas= $this->getRuta("/listadoResenas",$accionActual);
+        $pinchos= $this->getRuta("/listadoPinchos",$accionActual);
+        $bares= $this->getRuta("/listadoBares",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
+        $logOut= $this->getRuta("/logOut",$accionActual);
         $error404=$this->getRuta("error404",$accionActual);
         $error500=$this->getRuta("error500",$accionActual);
         require("View/listadoResenas.php");
@@ -178,12 +181,12 @@ class controllerSesion
      */
     public function mostrarUsuarios($accionActual)
     {
-        $usuarios = $this->getRuta("listadoUsuarios",$accionActual);
-        $reseñas= $this->getRuta("listadoResenas",$accionActual);
-        $pinchos= $this->getRuta("listadoPinchos",$accionActual);
-        $bares= $this->getRuta("listadoBares",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
-        $logOut= $this->getRuta("logOut",$accionActual);
+        $usuarios = $this->getRuta("/listadoUsuarios",$accionActual);
+        $reseñas= $this->getRuta("/listadoResenas",$accionActual);
+        $pinchos= $this->getRuta("/listadoPinchos",$accionActual);
+        $bares= $this->getRuta("/listadoBares",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
+        $logOut= $this->getRuta("/logOut",$accionActual);
         $error404=$this->getRuta("error404",$accionActual);
         $error500=$this->getRuta("error500",$accionActual);
         require("View/listadoUsuarios.php");
@@ -196,12 +199,12 @@ class controllerSesion
      */
     public function mostrarInfoBares($accionActual)
     {
-        $usuarios = $this->getRuta("listadoUsuarios",$accionActual);
-        $reseñas= $this->getRuta("listadoResenas",$accionActual);
-        $pinchos= $this->getRuta("listadoPinchos",$accionActual);
-        $bares= $this->getRuta("listadoBares",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
-        $logOut= $this->getRuta("logOut",$accionActual);
+        $usuarios = $this->getRuta("/listadoUsuarios",$accionActual);
+        $reseñas= $this->getRuta("/listadoResenas",$accionActual);
+        $pinchos= $this->getRuta("/listadoPinchos",$accionActual);
+        $bares= $this->getRuta("/listadoBares",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
+        $logOut= $this->getRuta("/logOut",$accionActual);
         $error404=$this->getRuta("error404",$accionActual);
         $error500=$this->getRuta("error500",$accionActual);
         require("View/infoBares.php");
@@ -214,13 +217,13 @@ class controllerSesion
      */
     public function mostrarInfoBaresFront($accionActual)
     {
-        $bares= $this->getRuta("mostrarBaresFront",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
-        $logOut= $this->getRuta("logOutFront",$accionActual);
-        $mapa= $this->getRuta("mapa",$accionActual);
-        $perfil= $this->getRuta("mostrarInfoUsuarioFront?id=".$_SESSION["codigo_usuaraio"],$accionActual);
-        $home= $this->getRuta("home",$accionActual);
-        $pinchos= $this->getRuta("mostrarPinchosFront",$accionActual);
+        $bares= $this->getRuta("/mostrarBaresFront",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
+        $logOut= $this->getRuta("/logOutFront",$accionActual);
+        $mapa= $this->getRuta("/mapa",$accionActual);
+        $perfil= $this->getRuta("/mostrarInfoUsuarioFront?id=".$_SESSION["codigo_usuaraio"],$accionActual);
+        $home= $this->getRuta("/home",$accionActual);
+        $pinchos= $this->getRuta("/mostrarPinchosFront",$accionActual);
         require("View/infoBaresFront.php");
     }
     /**
@@ -231,13 +234,13 @@ class controllerSesion
      */
     public function mostrarInfoPinchosFront($accionActual)
     {
-        $bares= $this->getRuta("mostrarBaresFront",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
-        $logOut= $this->getRuta("logOutFront",$accionActual);
-        $perfil= $this->getRuta("mostrarInfoUsuarioFront?id=".$_SESSION["codigo_usuaraio"],$accionActual);
-        $mapa= $this->getRuta("mapa",$accionActual);
-        $home= $this->getRuta("home",$accionActual);
-        $pinchos= $this->getRuta("mostrarPinchosFront",$accionActual);
+        $bares= $this->getRuta("/mostrarBaresFront",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
+        $logOut= $this->getRuta("/logOutFront",$accionActual);
+        $perfil= $this->getRuta("/mostrarInfoUsuarioFront?id=".$_SESSION["codigo_usuaraio"],$accionActual);
+        $mapa= $this->getRuta("/mapa",$accionActual);
+        $home= $this->getRuta("/home",$accionActual);
+        $pinchos= $this->getRuta("/mostrarPinchosFront",$accionActual);
         require("View/infoPinchosFront.php");
     }
     /**
@@ -248,12 +251,12 @@ class controllerSesion
      */
     public function mostrarInfoUsuarios($accionActual)
     {
-        $usuarios = $this->getRuta("listadoUsuarios",$accionActual);
-        $reseñas= $this->getRuta("listadoResenas",$accionActual);
-        $pinchos= $this->getRuta("listadoPinchos",$accionActual);
-        $bares= $this->getRuta("listadoBares",$accionActual);
-        $logOut= $this->getRuta("logOut",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
+        $usuarios = $this->getRuta("/listadoUsuarios",$accionActual);
+        $reseñas= $this->getRuta("/listadoResenas",$accionActual);
+        $pinchos= $this->getRuta("/listadoPinchos",$accionActual);
+        $bares= $this->getRuta("/listadoBares",$accionActual);
+        $logOut= $this->getRuta("/logOut",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
         $error404=$this->getRuta("error404",$accionActual);
         $error500=$this->getRuta("error500",$accionActual);
         require("View/infoUsuarios.php");
@@ -266,83 +269,125 @@ class controllerSesion
      */
     public function mostrarañadirUsuario($accionActual)
     {
-        $usuarios = $this->getRuta("listadoUsuarios",$accionActual);
-        $reseñas= $this->getRuta("listadoResenas",$accionActual);
-        $pinchos= $this->getRuta("listadoPinchos",$accionActual);
-        $bares= $this->getRuta("listadoBares",$accionActual);
-        $logOut= $this->getRuta("logOut",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
+        $usuarios = $this->getRuta("/listadoUsuarios",$accionActual);
+        $reseñas= $this->getRuta("/listadoResenas",$accionActual);
+        $pinchos= $this->getRuta("/listadoPinchos",$accionActual);
+        $bares= $this->getRuta("/listadoBares",$accionActual);
+        $logOut= $this->getRuta("/logOut",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
         $error404=$this->getRuta("error404",$accionActual);
         $error500=$this->getRuta("error500",$accionActual);
         require("View/añadirUsuario.php");
-    }  
+    }      
+    /**
+     * mostraranadirBares
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function mostraranadirBares($accionActual)
     {
-        $usuarios = $this->getRuta("listadoUsuarios",$accionActual);
-        $reseñas= $this->getRuta("listadoResenas",$accionActual);
-        $pinchos= $this->getRuta("listadoPinchos",$accionActual);
-        $bares= $this->getRuta("listadoBares",$accionActual);
-        $logOut= $this->getRuta("logOut",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
+        $usuarios = $this->getRuta("/listadoUsuarios",$accionActual);
+        $reseñas= $this->getRuta("/listadoResenas",$accionActual);
+        $pinchos= $this->getRuta("/listadoPinchos",$accionActual);
+        $bares= $this->getRuta("/listadoBares",$accionActual);
+        $logOut= $this->getRuta("/logOut",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
         $error404=$this->getRuta("error404",$accionActual);
         $error500=$this->getRuta("error500",$accionActual);
         require("View/añadirBar.php");
-    }  
+    }      
+    /**
+     * mostrlistadoBaresFront
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function mostrlistadoBaresFront($accionActual)
     {
-        $bares= $this->getRuta("mostrarBaresFront",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
-        $logOut= $this->getRuta("logOutFront",$accionActual);
-        $mapa= $this->getRuta("mapa",$accionActual);
-        $perfil= $this->getRuta("mostrarInfoUsuarioFront?id=".$_SESSION["codigo_usuaraio"],$accionActual);
-        $home= $this->getRuta("home",$accionActual);
-        $pinchos= $this->getRuta("mostrarPinchosFront",$accionActual);
+        $bares= $this->getRuta("/mostrarBaresFront",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
+        $logOut= $this->getRuta("/logOutFront",$accionActual);
+        $mapa= $this->getRuta("/mapa",$accionActual);
+        $perfil= $this->getRuta("/mostrarInfoUsuarioFront?id=".$_SESSION["codigo_usuaraio"],$accionActual);
+        $home= $this->getRuta("/home",$accionActual);
+        $pinchos= $this->getRuta("/mostrarPinchosFront",$accionActual);
         require("View/listadoBaresFront.php");
-    }  
+    }      
+    /**
+     * mostrlistadoPinchosFront
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function mostrlistadoPinchosFront($accionActual)
     {
-        $bares= $this->getRuta("mostrarBaresFront",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
-        $logOut= $this->getRuta("logOutFront",$accionActual);
-        $mapa= $this->getRuta("mapa",$accionActual);
-        $perfil= $this->getRuta("mostrarInfoUsuarioFront?id=".$_SESSION["codigo_usuaraio"],$accionActual);
-        $home= $this->getRuta("home",$accionActual);
-        $pinchos= $this->getRuta("mostrarPinchosFront",$accionActual);
+        $bares= $this->getRuta("/mostrarBaresFront",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
+        $logOut= $this->getRuta("/logOutFront",$accionActual);
+        $mapa= $this->getRuta("/mapa",$accionActual);
+        $perfil= $this->getRuta("/mostrarInfoUsuarioFront?id=".$_SESSION["codigo_usuaraio"],$accionActual);
+        $home= $this->getRuta("/home",$accionActual);
+        $pinchos= $this->getRuta("/mostrarPinchosFront",$accionActual);
         require("View/listadoPinchosFront.php");
-    }  
+    }      
+    /**
+     * mostrRegistro
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function mostrRegistro($accionActual)
     {
         
         require("View/registro.php");
-    }  
+    }      
+    /**
+     * mostrarInfoUsuarioFront
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function mostrarInfoUsuarioFront($accionActual)
     {
-        $bares= $this->getRuta("mostrarBaresFront",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
-        $logOut= $this->getRuta("logOutFront",$accionActual);
-        $perfil= $this->getRuta("mostrarInfoUsuarioFront?id=".$_SESSION["codigo_usuaraio"],$accionActual);
-        $mapa= $this->getRuta("mapa",$accionActual);
-        $home= $this->getRuta("home",$accionActual);
-        $pinchos= $this->getRuta("mostrarPinchosFront",$accionActual);
+        $bares= $this->getRuta("/mostrarBaresFront",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
+        $logOut= $this->getRuta("/logOutFront",$accionActual);
+        $perfil= $this->getRuta("/mostrarInfoUsuarioFront?id=".$_SESSION["codigo_usuaraio"],$accionActual);
+        $mapa= $this->getRuta("/mapa",$accionActual);
+        $home= $this->getRuta("/home",$accionActual);
+        $pinchos= $this->getRuta("/mostrarPinchosFront",$accionActual);
         require("View/infoUsuarioFront.php");
     }
-    
+        
+    /**
+     * mostrara
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function mostrarañadirPincho($accionActual)
     {
-        $usuarios = $this->getRuta("listadoUsuarios",$accionActual);
-        $reseñas= $this->getRuta("listadoResenas",$accionActual);
-        $pinchos= $this->getRuta("listadoPinchos",$accionActual);
-        $bares= $this->getRuta("listadoBares",$accionActual);
-        $logOut= $this->getRuta("logOut",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
+        $usuarios = $this->getRuta("/listadoUsuarios",$accionActual);
+        $reseñas= $this->getRuta("/listadoResenas",$accionActual);
+        $pinchos= $this->getRuta("/listadoPinchos",$accionActual);
+        $bares= $this->getRuta("/listadoBares",$accionActual);
+        $logOut= $this->getRuta("/logOut",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
         $error404=$this->getRuta("error404",$accionActual);
         $error500=$this->getRuta("error500",$accionActual);
         require("View/añadirPincho.php");
-    }
+    }    
+    /**
+     * mostrarLoginFront
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function mostrarLoginFront($accionActual)
     {
-        $registro =$this->getRuta("registro",$accionActual);
-        $accion =  $this->getRuta("comprobarloginFront", $accionActual);
+        $registro =$this->getRuta("/registro",$accionActual);
+        $accion =  $this->getRuta("/comprobarloginFront", $accionActual);
         require("View/loginFront.php");
     }
 
@@ -355,12 +400,12 @@ class controllerSesion
      */
     public function mostrarContacto($accionActual)
     {
-        $usuarios = $this->getRuta("listadoUsuarios",$accionActual);
-        $reseñas= $this->getRuta("listadoResenas",$accionActual);
-        $pinchos= $this->getRuta("listadoPinchos",$accionActual);
-        $bares= $this->getRuta("listadoBares",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
-        $logOut= $this->getRuta("logOut",$accionActual);
+        $usuarios = $this->getRuta("/listadoUsuarios",$accionActual);
+        $reseñas= $this->getRuta("/listadoResenas",$accionActual);
+        $pinchos= $this->getRuta("/listadoPinchos",$accionActual);
+        $bares= $this->getRuta("/listadoBares",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
+        $logOut= $this->getRuta("/logOut",$accionActual);
         $error404=$this->getRuta("error404",$accionActual);
         $error500=$this->getRuta("error500",$accionActual);
         require("View/contacto.php");
@@ -373,12 +418,12 @@ class controllerSesion
      */
     public function mostrarInfoPinchos($accionActual)
     {
-        $usuarios = $this->getRuta("listadoUsuarios",$accionActual);
-        $reseñas= $this->getRuta("listadoResenas",$accionActual);
-        $pinchos= $this->getRuta("listadoPinchos",$accionActual);
-        $bares= $this->getRuta("listadoBares",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
-        $logOut= $this->getRuta("logOut",$accionActual);
+        $usuarios = $this->getRuta("/listadoUsuarios",$accionActual);
+        $reseñas= $this->getRuta("/listadoResenas",$accionActual);
+        $pinchos= $this->getRuta("/listadoPinchos",$accionActual);
+        $bares= $this->getRuta("/listadoBares",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
+        $logOut= $this->getRuta("/logOut",$accionActual);
         $error404=$this->getRuta("error404",$accionActual);
         $error500=$this->getRuta("error500",$accionActual);
         require("View/infoPinchos.php");
@@ -391,12 +436,12 @@ class controllerSesion
      */
     public function mostrarInfoReseña($accionActual)
     {
-        $usuarios = $this->getRuta("listadoUsuarios",$accionActual);
-        $reseñas= $this->getRuta("listadoResenas",$accionActual);
-        $pinchos= $this->getRuta("listadoPinchos",$accionActual);
-        $bares= $this->getRuta("listadoBares",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
-        $logOut= $this->getRuta("logOut",$accionActual);
+        $usuarios = $this->getRuta("/listadoUsuarios",$accionActual);
+        $reseñas= $this->getRuta("/listadoResenas",$accionActual);
+        $pinchos= $this->getRuta("/listadoPinchos",$accionActual);
+        $bares= $this->getRuta("/listadoBares",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
+        $logOut= $this->getRuta("/logOut",$accionActual);
         $error404=$this->getRuta("error404",$accionActual);
         $error500=$this->getRuta("error500",$accionActual);
         require("View/infoResena.php");
@@ -438,7 +483,7 @@ class controllerSesion
     {
 
         if (!isset($_SESSION["usuario"])) {
-            header('Location: ' . $this->getRuta("login", $accionActual));
+            header('Location: ' . $this->getRuta("/login", $accionActual));
             return;
         }
     }
@@ -452,7 +497,7 @@ class controllerSesion
     {
 
         if (!isset($_SESSION["usuario"])) {
-            header('Location: ' . $this->getRuta("loginFront", $accionActual));
+            header('Location: ' . $this->getRuta("/loginFront", $accionActual));
             return;
         }
     }
@@ -465,7 +510,7 @@ class controllerSesion
     public function logOut($accionActual)
     {
         session_destroy();
-        header("Location: ".$this->getRuta("login",$accionActual));
+        header("Location: ".$this->getRuta("/login",$accionActual));
     }
     /**
      * logOut
@@ -476,28 +521,40 @@ class controllerSesion
     public function logOutFront($accionActual)
     {
         session_destroy();
-        header("Location: ".$this->getRuta("loginFront",$accionActual));
-    }
+        header("Location: ".$this->getRuta("/loginFront",$accionActual));
+    }    
+    /**
+     * home
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function home($accionActual)
     {
-        $bares= $this->getRuta("mostrarBaresFront",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
-        $logOut= $this->getRuta("logOutFront",$accionActual);
-        $mapa= $this->getRuta("mapa",$accionActual);
-        $home= $this->getRuta("home",$accionActual);
-        $perfil= $this->getRuta("mostrarInfoUsuarioFront?id=".$_SESSION["codigo_usuaraio"],$accionActual);
-        $pinchos= $this->getRuta("mostrarPinchosFront",$accionActual);
+        $bares= $this->getRuta("/mostrarBaresFront",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
+        $logOut= $this->getRuta("/logOutFront",$accionActual);
+        $mapa= $this->getRuta("/mapa",$accionActual);
+        $home= $this->getRuta("/home",$accionActual);
+        $perfil= $this->getRuta("/mostrarInfoUsuarioFront?id=".$_SESSION["codigo_usuaraio"],$accionActual);
+        $pinchos= $this->getRuta("/mostrarPinchosFront",$accionActual);
         require("View/home.php");
-    }
+    }    
+    /**
+     * mostrarMapa
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function mostrarMapa($accionActual)
     {
-        $bares= $this->getRuta("mostrarBaresFront",$accionActual);
-        $contacto= $this->getRuta("contacto",$accionActual);
-        $logOut= $this->getRuta("logOutFront",$accionActual);
-        $mapa= $this->getRuta("mapa",$accionActual);
-        $home= $this->getRuta("home",$accionActual);
-        $perfil= $this->getRuta("mostrarInfoUsuarioFront?id=".$_SESSION["codigo_usuaraio"],$accionActual);
-        $pinchos= $this->getRuta("mostrarPinchosFront",$accionActual);
+        $bares= $this->getRuta("/mostrarBaresFront",$accionActual);
+        $contacto= $this->getRuta("/contacto",$accionActual);
+        $logOut= $this->getRuta("/logOutFront",$accionActual);
+        $mapa= $this->getRuta("/mapa",$accionActual);
+        $home= $this->getRuta("/home",$accionActual);
+        $perfil= $this->getRuta("/mostrarInfoUsuarioFront?id=".$_SESSION["codigo_usuaraio"],$accionActual);
+        $pinchos= $this->getRuta("/mostrarPinchosFront",$accionActual);
         require("View/mapa.php");
     }
     /**
@@ -509,9 +566,11 @@ class controllerSesion
      */
     static function getRuta($accionDestino, $accionActual)
     {
-        $rutaActual = "http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+        //$rutaActual = "http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+        $rutaActual = "/dwes/PruebaProyecto/index.php";
         $ruta = str_replace($accionActual, "", $rutaActual);
         $accion =  $ruta . $accionDestino;
         return $accion;
     }
 }
+

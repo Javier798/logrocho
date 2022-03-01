@@ -88,43 +88,113 @@ function guardarImagenes() {
                     contentType: false,
                     processData: false,
                     success: function (response) {
-
+                        if (imagen2.files.length > 0) {
+                            var formData = new FormData();
+                            formData.append('imagen', imagen2.files[0]);
+                            formData.append('bar', datos[0].max);
+                            $.ajax({
+                                url: 'guardarImagenBar',
+                                type: 'post',
+                                data: formData,
+                                contentType: false,
+                                processData: false,
+                                success: function (response) {
+                                    if (imagen3.files.length > 0) {
+                                        var formData = new FormData();
+                                        formData.append('imagen', imagen3.files[0]);
+                                        formData.append('bar', datos[0].max);
+                                        $.ajax({
+                                            url: 'guardarImagenBar',
+                                            type: 'post',
+                                            data: formData,
+                                            contentType: false,
+                                            processData: false,
+                                            success: function (response) {
+                                                window.location.reload();
+                                            }
+                                        });
+                                    }else{
+                                        window.location.reload();
+                                    }
+                                }
+                            });
+                        }else{
+                            if (imagen3.files.length > 0) {
+                                var formData = new FormData();
+                                formData.append('imagen', imagen3.files[0]);
+                                formData.append('bar', datos[0].max);
+                                $.ajax({
+                                    url: 'guardarImagenBar',
+                                    type: 'post',
+                                    data: formData,
+                                    contentType: false,
+                                    processData: false,
+                                    success: function (response) {
+                                        window.location.reload();
+                                    }
+                                });
+                            }else{
+                                window.location.reload();
+                            }
+                        }
                     }
                 });
-            }
-            if (imagen2.files.length > 0) {
-                var formData = new FormData();
-                formData.append('imagen', imagen2.files[0]);
-                formData.append('bar', datos[0].max);
-                $.ajax({
-                    url: 'guardarImagenBar',
-                    type: 'post',
-                    data: formData,
-                    contentType: false,
-                    processData: false,
-                    success: function (response) {
-
+            }else{
+                if (imagen2.files.length > 0) {
+                    var formData = new FormData();
+                    formData.append('imagen', imagen2.files[0]);
+                    formData.append('bar', datos[0].max);
+                    $.ajax({
+                        url: 'guardarImagenBar',
+                        type: 'post',
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        success: function (response) {
+                            if (imagen3.files.length > 0) {
+                                var formData = new FormData();
+                                formData.append('imagen', imagen3.files[0]);
+                                formData.append('bar', datos[0].max);
+                                $.ajax({
+                                    url: 'guardarImagenBar',
+                                    type: 'post',
+                                    data: formData,
+                                    contentType: false,
+                                    processData: false,
+                                    success: function (response) {
+                                        window.location.reload();
+                                    }
+                                });
+                            }else{
+                                window.location.reload();
+                            }
+                        }
+                    });
+                }else{
+                    if (imagen3.files.length > 0) {
+                        var formData = new FormData();
+                        formData.append('imagen', imagen3.files[0]);
+                        formData.append('bar', datos[0].max);
+                        $.ajax({
+                            url: 'guardarImagenBar',
+                            type: 'post',
+                            data: formData,
+                            contentType: false,
+                            processData: false,
+                            success: function (response) {
+                                window.location.reload();
+                            }
+                        });
+                    }else{
+                        window.location.reload();
                     }
-                });
+                }
             }
-            if (imagen3.files.length > 0) {
-                var formData = new FormData();
-                formData.append('imagen', imagen3.files[0]);
-                formData.append('bar', datos[0].max);
-                $.ajax({
-                    url: 'guardarImagenBar',
-                    type: 'post',
-                    data: formData,
-                    contentType: false,
-                    processData: false,
-                    success: function (response) {
-
-                    }
-                });
-            }
+            
+            
         }
-    });
+    });/*
  setTimeout(() => {
     window.location.reload();
- }, 100);   
+ }, 300); */
 }

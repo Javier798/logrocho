@@ -252,7 +252,7 @@ if (isset($array_ruta[0]) && $array_ruta[0] == "login") {
     $id = $_POST["id"];
     $controllerApi->getResenasPorUsuarioLimit($ordenacion, $indice, $cantidad, $id);
 } else if (isset($array_ruta[0]) && $array_ruta[0] == "mostrarBaresFront") {
-    $controllerSession->comprobarSession($array_ruta[0]);
+    $controllerSession->comprobarSessionFront($array_ruta[0]);
     $controllerSession->mostrlistadoBaresFront($array_ruta[0]);
 } else if (isset($array_ruta[0]) && $array_ruta[0] == "loginFront") {
     $controllerSession->mostrarLoginFront($array_ruta[0]);

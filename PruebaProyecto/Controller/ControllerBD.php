@@ -324,7 +324,7 @@ class controllerBD
      */
     public function guardarImagenBar($id,$imagen)
     {
-        $ruta ="http://localhost/dwes/PruebaProyecto/View/img/img_bar/".$id."/".$imagen["name"];
+        $ruta ="https://franciscojavier.ociobinario.com/dwes/PruebaProyecto/View/img/img_bar/".$id."/".$imagen["name"];
 
         if (!file_exists("View/img/img_bar/".$id)) {
             mkdir("./View/img/img_bar/".$id, 0777, true);
@@ -351,7 +351,7 @@ class controllerBD
      */
     public function guardarImagenUsuario($id,$imagen)
     {
-        $ruta ="http://localhost/dwes/PruebaProyecto/View/img/img_usuario/".$id."/".$imagen["name"];
+        $ruta ="https://franciscojavier.ociobinario.com/dwes/PruebaProyecto/View/img/img_usuario/".$id."/".$imagen["name"];
 
         if (!file_exists("View/img/img_usuario/".$id)) {
             mkdir("./View/img/img_usuario/".$id, 0777, true);
@@ -379,7 +379,7 @@ class controllerBD
      */
     public function borrarImagenBar($id,$imagen,$idImg)
     {
-        $ruta ="'http://localhost/dwes/PruebaProyecto/View/img/img_bar/".$id."/".$imagen."'";
+        $ruta ="'https://franciscojavier.ociobinario.com/dwes/PruebaProyecto/View/img/img_bar/".$id."/".$imagen."'";
         if (file_exists("./View/img/img_bar/".$id."/".$imagen)) {
             unlink("./View/img/img_bar/".$id."/".$imagen);
         }
@@ -397,7 +397,7 @@ class controllerBD
      */
     public function guardarImagenPincho($id,$imagen)
     {
-        $ruta ="http://localhost/dwes/PruebaProyecto/View/img/img_pincho/".$id."/".$imagen["name"];
+        $ruta ="https://franciscojavier.ociobinario.comdwes/PruebaProyecto/View/img/img_pincho/".$id."/".$imagen["name"];
 
         if (!file_exists("View/img/img_pincho/".$id)) {
             mkdir("./View/img/img_pincho/".$id, 0777, true);
@@ -424,7 +424,7 @@ class controllerBD
      */
     public function borrarImagenPincho($id,$imagen,$idImg)
     {
-        $ruta ="'http://localhost/dwes/PruebaProyecto/View/img/img_pincho/".$id."/".$imagen."'";
+        $ruta ="'https://franciscojavier.ociobinario.com/dwes/PruebaProyecto/View/img/img_pincho/".$id."/".$imagen."'";
         if (file_exists("./View/img/img_pincho/".$id."/".$imagen)) {
             
             unlink("./View/img/img_pincho/".$id."/".$imagen);
@@ -444,14 +444,20 @@ class controllerBD
      */
     public function borrarImagenUsuario($id,$imagen,$idImg)
     {
-        $ruta ="'http://localhost/dwes/PruebaProyecto/View/img/img_usuario/".$id."/".$imagen."'";
+        $ruta ="'https://franciscojavier.ociobinario.com/dwes/PruebaProyecto/View/img/img_usuario/".$id."/".$imagen."'";
         if (file_exists("./View/img/img_usuario/".$id."/".$imagen)) {
             
             unlink("./View/img/img_usuario/".$id."/".$imagen);
         }
         $gestor = new bd(Conexion::getConexion(host, bdname, user, password));
         $gestor->bajaImnagenUsuario($id,$ruta);
-    }
+    }    
+    /**
+     * borrarLikes
+     * borra los likes de un usuario
+     * @param  mixed $id
+     * @return void
+     */
     public function borrarLikes($id)
     {
         $gestor = new bd(Conexion::getConexion(host, bdname, user, password));

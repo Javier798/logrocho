@@ -31,7 +31,9 @@ class bd
             $contador++;
         }
         $sql = "SELECT * FROM `usuarios` WHERE $sentencia;";
-        $libros = $this->conexion->query($sql);
+
+        $libros = $this->conexion->query($sql); 
+        
         return $libros;
     }
     public function buscarPinchosBares($token)
@@ -86,7 +88,7 @@ class bd
     {
         try {
 
-            $sql = "INSERT INTO `bares`(`Nombre`, `Localizacion`, `Puntuacion`,`Descripcion`,`Longitud`,`Latitud`) VALUES ($array[nombre],$array[localizacion],$array[puntuacion],$array[descripcion],$array[longitud],$array[latitud]);";
+          $sql = "INSERT INTO `bares`(`Nombre`, `Localizacion`, `Puntuacion`,`Descripcion`,`Longitud`,`Latitud`) VALUES ($array[nombre],$array[localizacion],".intval($array['puntuacion']).",$array[descripcion],".doubleval($array['longitud']).",".doubleval($array['latitud']).");";
             $resultado = $this->conexion->query($sql);
             if ($resultado) {
                 echo "Pincho dado de alta correctamente.";
@@ -267,12 +269,16 @@ class bd
         return $result;
     }
 
+       
     /**
-     * getBaresLimit
+     * getBaresLimit con filtro
      *
      * @param  mixed $ordenacion
      * @param  mixed $indice
      * @param  mixed $cantidad
+     * @param  mixed $filtro
+     * @param  mixed $puntuacion
+     * @param  mixed $puntuacionMax
      * @return void
      */
     public function getBaresLimit($ordenacion, $indice, $cantidad, $filtro, $puntuacion, $puntuacionMax)
@@ -309,12 +315,17 @@ class bd
         $result = $this->conexion->query($sql);
         return $result;
     }
+        
     /**
-     * getPinchosLimit
+     * getPinchosLimit con filtro
      *
      * @param  mixed $ordenacion
      * @param  mixed $indice
      * @param  mixed $cantidad
+     * @param  mixed $puntuacion
+     * @param  mixed $puntuacionmax
+     * @param  mixed $filtro
+     * @param  mixed $bar
      * @return void
      */
     public function getPinchosLimit($ordenacion, $indice, $cantidad, $puntuacion, $puntuacionmax, $filtro, $bar)
@@ -944,7 +955,13 @@ class bd
 
             echo $e->getMessage();
         }
-    }
+    }    
+    /**
+     * añadir likes
+     *
+     * @param  mixed $id
+     * @return void
+     */
     public function añadirLike($id)
     {
         try {
@@ -958,7 +975,13 @@ class bd
 
             echo $e->getMessage();
         }
-    }
+    }    
+    /**
+     * borrarLikes
+     *
+     * @param  mixed $id
+     * @return void
+     */
     public function borrarLike($id)
     {
         try {

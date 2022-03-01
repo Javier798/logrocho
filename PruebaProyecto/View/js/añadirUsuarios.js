@@ -117,5 +117,5 @@ if(validarEmail(email)){
 }
   setTimeout(() => {
     window.location.reload();
-  }, 100);  
+  }, 300);  
 }
