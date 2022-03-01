@@ -114,57 +114,124 @@ function guardarImagenes() {
         success: function (response) {
             datos = eval(response);
             let imagen1 = document.getElementById("archivos1");
-        let imagen2 = document.getElementById("archivos2");
-        let imagen3 = document.getElementById("archivos3");
-        if (imagen1.files.length > 0) {
-            var formData = new FormData();
-            formData.append('imagen', imagen1.files[0]);
-            formData.append('pincho', datos[0].max);
-            $.ajax({
-                url: 'guardarImagenPincho',
-                type: 'post',
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function (response) {
-
+            let imagen2 = document.getElementById("archivos2");
+            let imagen3 = document.getElementById("archivos3");
+            
+            if (imagen1.files.length > 0) {
+                var formData = new FormData();
+                formData.append('imagen', imagen1.files[0]);
+                formData.append('bar', datos[0].max);
+                $.ajax({
+                    url: 'guardarImagenePincho',
+                    type: 'post',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        if (imagen2.files.length > 0) {
+                            var formData = new FormData();
+                            formData.append('imagen', imagen2.files[0]);
+                            formData.append('bar', datos[0].max);
+                            $.ajax({
+                                url: 'guardarImagenePincho',
+                                type: 'post',
+                                data: formData,
+                                contentType: false,
+                                processData: false,
+                                success: function (response) {
+                                    if (imagen3.files.length > 0) {
+                                        var formData = new FormData();
+                                        formData.append('imagen', imagen3.files[0]);
+                                        formData.append('bar', datos[0].max);
+                                        $.ajax({
+                                            url: 'guardarImagenePincho',
+                                            type: 'post',
+                                            data: formData,
+                                            contentType: false,
+                                            processData: false,
+                                            success: function (response) {
+                                                window.location.reload();
+                                            }
+                                        });
+                                    }else{
+                                        window.location.reload();
+                                    }
+                                }
+                            });
+                        }else{
+                            if (imagen3.files.length > 0) {
+                                var formData = new FormData();
+                                formData.append('imagen', imagen3.files[0]);
+                                formData.append('bar', datos[0].max);
+                                $.ajax({
+                                    url: 'guardarImagenePincho',
+                                    type: 'post',
+                                    data: formData,
+                                    contentType: false,
+                                    processData: false,
+                                    success: function (response) {
+                                        window.location.reload();
+                                    }
+                                });
+                            }else{
+                                window.location.reload();
+                            }
+                        }
+                    }
+                });
+            }else{
+                if (imagen2.files.length > 0) {
+                    var formData = new FormData();
+                    formData.append('imagen', imagen2.files[0]);
+                    formData.append('bar', datos[0].max);
+                    $.ajax({
+                        url: 'guardarImagenePincho',
+                        type: 'post',
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        success: function (response) {
+                            if (imagen3.files.length > 0) {
+                                var formData = new FormData();
+                                formData.append('imagen', imagen3.files[0]);
+                                formData.append('bar', datos[0].max);
+                                $.ajax({
+                                    url: 'guardarImagenePincho',
+                                    type: 'post',
+                                    data: formData,
+                                    contentType: false,
+                                    processData: false,
+                                    success: function (response) {
+                                        window.location.reload();
+                                    }
+                                });
+                            }else{
+                                window.location.reload();
+                            }
+                        }
+                    });
+                }else{
+                    if (imagen3.files.length > 0) {
+                        var formData = new FormData();
+                        formData.append('imagen', imagen3.files[0]);
+                        formData.append('bar', datos[0].max);
+                        $.ajax({
+                            url: 'guardarImagenePincho',
+                            type: 'post',
+                            data: formData,
+                            contentType: false,
+                            processData: false,
+                            success: function (response) {
+                                window.location.reload();
+                            }
+                        });
+                    }else{
+                        window.location.reload();
+                    }
                 }
-            });
-        }
-        if (imagen2.files.length > 0) {
-            var formData = new FormData();
-            formData.append('imagen', imagen2.files[0]);
-            formData.append('pincho', datos[0].max);
-            $.ajax({
-                url: 'guardarImagenPincho',
-                type: 'post',
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function (response) {
-
-                }
-            });
-        }
-        if (imagen3.files.length > 0) {
-            var formData = new FormData();
-            formData.append('imagen', imagen3.files[0]);
-            formData.append('pincho', datos[0].max);
-            $.ajax({
-                url: 'guardarImagenPincho',
-                type: 'post',
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function (response) {
-                    
-                }
-            });
-        }
+            }
         }
     });
-    setTimeout(() => {
-        window.location.reload();    
-    }, 300);
     
+
 }

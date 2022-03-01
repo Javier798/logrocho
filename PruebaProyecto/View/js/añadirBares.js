@@ -193,8 +193,8 @@ function guardarImagenes() {
             
             
         }
-    });/*
+    });
  setTimeout(() => {
     window.location.reload();
- }, 300); */
+ }, 300); 
 }

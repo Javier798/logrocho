@@ -113,7 +113,7 @@ class bd
     {
         try {
 
-            $sql = "INSERT INTO `pinchos`(`Nombre`, `Descripcion`, `Puntuacion`, `Fk_bar`) VALUES ($array[nombre],$array[descripcion],$array[puntuacion],$array[bar]);";
+            $sql = "INSERT INTO `pinchos`(`Nombre`, `Descripcion`, `Puntuacion`, `Fk_bar`) VALUES ($array[nombre],$array[descripcion],".intval($array['puntuacion']).",".intval($array['bar']).");";
             $resultado = $this->conexion->query($sql);
             return $resultado;
         } catch (\PDOException $e) {
