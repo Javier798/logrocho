@@ -243,3 +243,14 @@ function pintarEstrellas(datos) {
     }
     return devolver;
 }
+
+function anadirResena() {
+    $.ajax({
+        method: "POST",
+        url: "nombreBares",
+        success: function (response) {
+            bar = eval(response);
+            var keys = Object.keys(bar[2]);
+        }
+    });
+}

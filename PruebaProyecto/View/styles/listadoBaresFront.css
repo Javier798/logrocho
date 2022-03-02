@@ -33,7 +33,22 @@
     margin-top: 2%;
     flex-wrap: wrap;
 }
-
+#verMas{
+    background-color: #121212;
+    color: #c1a36a;
+    transition: 0.3s;
+    border: solid 1px #c1a36a;
+    opacity: 0.8;
+}
+#verMas:focus{
+    box-shadow: 0 0 0 0.2rem rgb(190 158 97);
+}
+#verMas:hover{
+    opacity: 1;
+}
+#flechita{
+    text-align: center;
+}
 .estrellas {
     display: flex;
     font-size: x-large;

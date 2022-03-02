@@ -30,6 +30,36 @@ class controllerApi
 
         echo json_encode($datos);
     }
+public function imagenesMasValoradas()
+{
+    $gestor = new bd(Conexion::getConexion(host, bdname, user, password));
+        $result = $gestor->imagenesMasValoradas();
+        $datos = [];
+        $barRes = [];
+        foreach ($result as $bar) {
+            $barRes["ruta"] = $bar["ruta"];
+            array_push($datos, $barRes);
+        }
+
+        echo json_encode($datos);
+    
+}
+public function imagenesMasVotadas()
+{
+    $gestor = new bd(Conexion::getConexion(host, bdname, user, password));
+        $result = $gestor->imagenesMasVotadas();
+        $datos = [];
+        $barRes = [];
+        foreach ($result as $bar) {
+            $barRes["ruta"] = $bar["ruta"];
+            array_push($datos, $barRes);
+        }
+
+        echo json_encode($datos);
+    
+}
+
+    
     /**
      * getBares
      * devuelve todos los bares

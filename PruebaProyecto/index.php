@@ -296,4 +296,8 @@ else if (isset($array_ruta[0]) && $array_ruta[0] == "getPinchosPorBarFront") {
     $token = $_POST["token"];
     $controllerApi->resBaresPinchos($token);
 }
-
+else if (isset($array_ruta[0]) && $array_ruta[0] == "imagenesMasValoradas") {
+    $controllerApi->imagenesMasValoradas();
+}else if (isset($array_ruta[0]) && $array_ruta[0] == "imagenesMasVotadas") {
+    $controllerApi->imagenesMasVotadas();
+}

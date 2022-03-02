@@ -13,7 +13,7 @@ function mostrarDatos() {
         if (indice < 0) {
             indice = 0;
         }
-        
+
         $.ajax({
             url: "getBarLimit",
             method: 'POST',
@@ -28,9 +28,9 @@ function mostrarDatos() {
                     }
                     itemsMowstrados.push(resultados[i]);
                 }
-                
-                    indice += 3;
-                
+
+                indice += 3;
+
                 let contenedorBares = document.querySelector("#bares");
                 setTimeout(() => {
                     for (let i = 0; i < resultados.length; i++) {
@@ -74,18 +74,18 @@ function construirFila(datos, n) {
     let contenedorTituli = document.createElement('div');
     let h5 = document.createElement('h5');
     h5.innerHTML = datos.Nombre;
-    let direccion =document.createElement('h5');
-    direccion.innerHTML=datos.Localizacion;
+    let direccion = document.createElement('h5');
+    direccion.innerHTML = datos.Localizacion;
     let estrellas = pintarEstrellas(datos);
     contenedorTituli.appendChild(h5);
-    contenedorTituli.className="contenedorTitulo";
+    contenedorTituli.className = "contenedorTitulo";
     contenedorTituli.appendChild(estrellas);
     datosBar.appendChild(contenedorTituli);
     datosBar.appendChild(direccion);
     bar.appendChild(imgBar);
     bar.appendChild(datosBar);
-    bar.addEventListener("click",()=>{
-        window.location="mostrarInfoBaresFront?id="+datos.Cod_bar;
+    bar.addEventListener("click", () => {
+        window.location = "mostrarInfoBaresFront?id=" + datos.Cod_bar;
     })
     return bar;
 }
@@ -151,10 +151,10 @@ $(document).ready(function () {
     $(window).scroll(function () {
 
         let algo = $(window).scrollTop();
-        if ($(window).scrollTop() != 0){
-            document.getElementById("subir").style.display="flex";
-        }else{
-            document.getElementById("subir").style.display="none";
+        if ($(window).scrollTop() != 0) {
+            document.getElementById("subir").style.display = "flex";
+        } else {
+            document.getElementById("subir").style.display = "none";
         }
         if ($(window).scrollTop() == $(document).height() - $(window).height()) {
             numFilas = 2;
@@ -163,7 +163,11 @@ $(document).ready(function () {
         }
     });
 });
+function verMas() {
+    numFilas = 2;
 
-function subir(){
+    mostrarDatos();
+}
+function subir() {
     $(window).scrollTop(0);
 }

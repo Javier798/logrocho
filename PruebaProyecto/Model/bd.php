@@ -269,7 +269,21 @@ class bd
         return $result;
     }
 
-       
+    public function imagenesMasValoradas()
+    {
+        $sql = "select ruta from imagenes_pincho where Fk_pincho IN (SELECT Cod_pincho from pinchos ORDER BY (SELECT AVG(valoracion) from reseña where Fk_pinchos= Cod_pincho) DESC) LIMIT 5;";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
+    public function imagenesMasVotadas()
+    {
+        
+        $sql = "select ruta from imagenes_pincho where Fk_pincho IN (SELECT Cod_pincho from pinchos ORDER BY (SELECT count(*) from likes,reseña where Fk_reseña=Cod_reseña) DESC) LIMIT 5;";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+    
     /**
      * getBaresLimit con filtro
      *

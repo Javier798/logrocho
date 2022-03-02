@@ -195,6 +195,7 @@
             </div>
         </div>
     </footer>
+    <script src="../View/js/jquery-3.6.0.js"></script>
     <script src="../View/js/slider.js"></script>
     <script src="../View/js/home.js"></script>
 </body>
