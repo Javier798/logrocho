@@ -1,0 +1,336 @@
+#fotos div {
+    width: 34%;
+    height: 200px;
+}
+
+#fotos img {
+    width: 95%;
+    height: 150px;
+    cursor: pointer;
+}
+
+#fotos {
+    display: flex;
+    margin-top: 1%;
+}
+
+#mostrando {
+    height: 470px;
+    width: 93%;
+    height: 470px;
+    margin-bottom: 35px;
+}
+
+#mostrando img {
+    width: 100%;
+    height: 470px;
+    border-radius: 50%;
+}
+
+#mostrando {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#parteInferior h4 {
+    border-bottom: solid black 1px;
+    text-align: center;
+}
+
+#galeria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 27%;
+}
+
+#parteInferior {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.papelera {
+    cursor: pointer;
+    color: red;
+}
+
+#tituloPagina h3 {
+    border-bottom: solid 1px black;
+}
+
+#tituloPagina {
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 3%;
+    text-align: center;
+}
+
+#parteSuperior {
+    gap: 9%;
+    margin: 5%;
+    margin-bottom: 3%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#anadirImagen {
+    margin-top: 6%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#botones {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#informacion {
+    width: 23%;
+}
+
+#informacion input {
+    width: 100%;
+    margin-bottom: 10%;
+}
+
+#descripcion {
+    margin-top: 10%;
+}
+
+#direccion input {
+    width: 100%;
+}
+
+#cambioContrasenia button {
+    width: 100%;
+}
+#borrarCuenta button{
+    width: 100%;
+    margin-top: 10%;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-group {
+    width: 170%;
+    height: 456px;
+    cursor: pointer;
+}
+
+input[type=file] {
+    outline: 0;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+.label {
+    width: 470px;
+    border: 2px dashed grey;
+    border-radius: 50%;
+    display: block;
+    padding: 14.2em;
+    transition: border 300ms ease;
+    cursor: pointer;
+    text-align: center;
+    height: 100%;
+}
+
+.label i {
+    display: block;
+    font-size: 42px;
+    padding-bottom: 16px;
+}
+
+.label i,
+.label .title {
+    color: grey;
+    transition: 200ms color;
+}
+
+.label:hover {
+    border: 2px solid black;
+}
+
+.label:hover i,
+.label:hover .title {
+    color: black;
+}
+
+#img1 {
+    display: none;
+}
+
+#imagen1 .papelera {
+    display: none;
+}
+
+#img2 {
+    display: none;
+}
+
+#imagen2 .papelera {
+    display: none;
+}
+
+#img3 {
+    display: none;
+}
+
+#imagen3 .papelera {
+    display: none;
+}
+
+#imagenMostrada {
+    border: black solid 1px;
+}
+
+#imagenMostrada {
+    display: none;
+}
+#titulos{
+    display: flex;
+    justify-content: space-between;
+    gap: 1%;
+}
+
+#titulos h4{
+    width: 100%;
+    cursor: pointer;
+}
+#trash {
+    display: none;
+    position: absolute;
+}
+#titulos h4:hover{
+    border-bottom: solid 1px black;
+    color: #c1a36a !important;
+}
+
+#filtros {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#filtradoNota {
+    display: flex;
+    gap: 2%;
+    justify-content: flex-start;
+    font-size: 26px;
+}
+
+#roles {
+    width: 20%;
+    height: 100%;
+    margin-top: 15px;
+}
+
+#desde {
+    width: 10%;
+}
+
+#hasta {
+    width: 10%;
+}
+
+#buscador {
+    height: 94%;
+}
+
+#buscador input {
+    height: 100%;
+}
+
+th i {
+    margin-left: 5px;
+}
+
+th p:hover {
+    cursor: pointer;
+}
+
+#filtrosFiltrar {
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#aniadir button {
+    height: 95%;
+}
+
+.contenido{
+    display: flex;
+    gap: 10%;
+}
+.imgResenia{
+    width: 150px;
+    height: 150px;
+    border-radius: 1rem;
+}
+#arriba{
+    display: flex;
+    justify-content: space-between;
+}
+.resenia{
+    margin-top: 3%;
+    width: 100%;
+    border-bottom: 1px solid #121212;
+}
+.estrellas{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+}
+.like{
+    cursor: pointer;
+}
+.contendorInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#resenias{
+    width: 80%;
+    margin: 0 auto;
+}
+#agrupacionResenias{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 5%;
+    margin-top: 3%;
+    gap: 2%;
+    justify-content: space-between;
+}
+.infoResenia h6{
+    border-bottom: solid 1px black;
+}
+
+.parteIzquierda{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3%;
+    align-items: center;
+}
+.papelera{
+    color: red;
+    cursor: pointer;
+    
+}
+.infoResenia{
+    width: 100%;
+}
+.infoResenia h6{
+    border-bottom: solid 1px black;
+}

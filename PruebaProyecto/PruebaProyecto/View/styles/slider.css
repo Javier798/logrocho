@@ -1,0 +1,87 @@
+#slider {
+    background: black;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#imagenMostrada {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.direccion:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+#opcionesSlider{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1%;
+}
+#anterior {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    width: 5%;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+}
+
+#siguiente {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    width: 5%;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+    right: 0;
+}
+
+#siguiente a {
+    width: 100%;
+}
+
+#anterior a {
+    
+    width: 100%;
+}
+
+#barras {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.barra {
+    cursor: pointer;
+    height: 2px;
+    width: 25px;
+    margin: 0 2px;
+    background: #dcdde1;
+    display: inline-block;
+    margin-left: 3px;
+}
+
+.activada {
+    background: red;
+}
+
+@keyframes animacionFavoritos {
+    from{opacity: .4;}
+    to{opacity: 1;}
+}
+@keyframes animacionValorados {
+    from{filter: grayscale(1);}
+    to{filter: grayscale(0);}
+}

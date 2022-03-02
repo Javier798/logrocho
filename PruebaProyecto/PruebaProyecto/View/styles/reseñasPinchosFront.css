@@ -1,0 +1,34 @@
+#agrupacionResenias{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 5%;
+    margin-top: 3%;
+    gap: 2%;
+    justify-content: space-between;
+}
+.resenia{
+    margin-top: 3%;
+    width: 30%;
+    border-bottom: 1px solid black;
+}
+.contenido{
+    display: flex;
+    gap: 10%;
+}
+.like{
+    cursor: pointer;
+    opacity: 0.7;
+    transition:0.3s;
+}
+.like:hover{
+    opacity:1;
+}
+.imgResenia{
+    width: 200px;
+    height: 200px;
+    border-radius: 1rem;
+}
+.infoResenia h6{
+    border-bottom: solid 1px;
+}
