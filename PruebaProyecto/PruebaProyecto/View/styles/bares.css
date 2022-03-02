@@ -1,0 +1,84 @@
+#contenedor {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: flex-end;
+  align-content: flex-end;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+#tabla {
+  width: 100%;
+  margin: 0 auto;
+}
+
+tr:hover {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+}
+#filtradoNota{
+  display: flex;
+  font-size: 28px;
+  gap: 2%;
+}
+thead tr:hover{
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0);
+}
+#titulo{
+  width: 100%;
+  text-align: right;
+  border-bottom: solid;
+  margin-bottom: 10px;
+}
+#buscador {
+  width: 20%;
+  height: 91%;
+}
+#desde {
+  width: 10%;
+}
+th i{
+  margin-left: 5px;
+}
+th p:hover{
+  cursor: pointer;
+}
+#buscador span{
+  cursor: pointer;
+}
+#buscador input{
+  height: 100%;
+}
+#hasta {
+  width: 10%;
+}
+#tabla h6 {
+  width: fit-content;
+  cursor: pointer;
+}
+#filtros{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+#roles{
+  width: 20%;
+}
+#paginacion{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#filtrosFiltrar {
+  width: 94%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#aniadir button {
+  height: 90%;
+}
+#Descripcion{
+  width: 34%;
+}

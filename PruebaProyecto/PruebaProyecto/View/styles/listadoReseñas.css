@@ -1,0 +1,56 @@
+#filtros {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#filtradoNota {
+  display: flex;
+  gap: 2%;
+  justify-content: flex-start;
+  font-size: 26px;
+}
+
+#roles {
+  width: 20%;
+  height: 100%;
+  margin-top: 15px;
+}
+
+#desde {
+  width: 10%;
+}
+
+#hasta {
+  width: 10%;
+}
+
+#buscador {
+  height: 94%;
+}
+#titulo{
+  width: 100%;
+  text-align: right;
+  border-bottom: solid;
+  margin-bottom: 10px;
+}
+#buscador input{
+  height: 100%;
+}
+th i {
+  margin-left: 5px;
+}
+
+th p:hover {
+  cursor: pointer;
+}
+
+#filtrosFiltrar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#aniadir button {
+  height: 95%;
+}

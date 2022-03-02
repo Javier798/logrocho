@@ -1,0 +1,56 @@
+
+#navegador {
+    height: 100%;
+    width: 90%;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+    align-items: center;
+    padding-left: 1%;
+    padding-right: 7%;
+    opacity: 0.8;
+    justify-content: space-between;
+}
+#enlaces{
+    display: flex;
+    gap: 17%;
+    font-size: 16px;
+}
+#navegador a {
+    color: white;
+    opacity: 1;
+    font-size: 18px;
+}
+
+#logo img:hover {
+    cursor: pointer;
+}
+#logrocho a{
+    font-family: "Poppins", Arial, sans-serif;
+    color: white;
+}
+#navegador a:hover{
+    color: rebeccapurple;
+}
+
+.menuNav {
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    height: 70%;
+}
+
+#logo img {
+    height: 100%;
+}
+
+#login {
+    display: flex;
+    gap: 9%;
+}
