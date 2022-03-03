@@ -1,8 +1,8 @@
 <?php
-const host = "localhost";
-const bdname = "franciscojaviero_logrocho";
-const user = "franciscojaviero_franciscojaviero";
-const password = "vesper!2021";
+const host = "localhost:3306";
+const bdname = "logrocho";
+const user = "root";
+const password = "";
 class controllerSesion
 {
     
