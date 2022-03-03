@@ -1,0 +1,285 @@
+#fotos div {
+    width: 32%;
+    height: 200px;
+}
+
+#fotos img {
+    width: 100%;
+    height: 150px;
+    cursor: pointer;
+}
+
+#fotos {
+    display: flex;
+    margin-top: 1%;
+    justify-content: space-between;
+}
+.modal-footer{
+    justify-content: space-between !important;
+}
+#mostrando {
+    width: 100%;
+    height: 100%;
+}
+#mesgResenia textarea{
+    width: 100%;
+}
+#publicar{
+    background-color: #333333;
+    color: #bd9d60;
+    border: solid 1px #bd9d60;
+}
+#cancelar{
+    background-color: #333333;
+    color: #bd9d60;
+    border: solid 1px #bd9d60;
+}
+#mostrando img {
+    width: 100%;
+    height: 470px;
+}
+
+#galeria {
+
+    width: 50%;
+}
+
+#arriba {
+    display: flex;
+    justify-content: space-between;
+}
+
+#parteSuperior {
+    gap: 12%;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+#tituloPinchos{
+    text-align: center;
+    border-bottom: 1px solid;
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 4%;
+}
+.contendorInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#informacion {
+    max-width: 33%;
+    height: fit-content;
+    border: solid 1px black;
+    padding: 16px;
+}
+.estrellas{
+    display: flex;
+    justify-content: center;
+}
+#contenedorSlider{
+    height: 100%;
+}
+.estrellas p {
+    font-size: 30px;
+}
+#anadirResenia{
+    position: absolute;
+    right: 0;
+    bottom: 20%;
+    background-color: #333333;
+    color: #bd9d60;
+    border: solid 1px #bd9d60;
+}
+#coordenadas {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+}
+
+#descripcion {
+    margin-top: 10%;
+    text-align: center;
+}
+
+#direccion {
+    text-align: center;
+}
+#informacion h5{
+    text-align: center;
+    font-size: 30px;
+}
+.rango {
+    width: 10%;
+}
+
+#direccion input {
+    width: 100%;
+}
+
+#tabla {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#pinchos {
+    width: 75%;
+    margin: 0 auto;
+}
+
+#pinchos h4 {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: solid 1px black;
+    margin-bottom: 2%;
+}
+
+#botones {
+    display: flex;
+    justify-content: space-between;
+}
+
+tr:hover {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+thead tr:hover {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0);
+}
+
+.imagenes {
+    position: absolute;
+}
+
+.papelera {
+    color: red;
+    cursor: pointer;
+}
+
+#anadirImagen {
+    margin-top: 10%;
+}
+
+#buscador {
+    width: 20%;
+}
+
+#tabla h6 {
+    width: fit-content;
+    cursor: pointer;
+}
+
+#tituloPagina h3 {
+    border-bottom: solid 1px black;
+}
+
+#tituloPagina {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 3%;
+    text-align: center;
+}
+
+#filtros {
+    display: flex;
+    gap: 2%;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+#roles {
+    width: 20%;
+}
+
+#desde {
+    width: 10%;
+}
+
+#hasta {
+    width: 10%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-group {
+    width: 95%;
+    height: 150px;
+    cursor: pointer;
+}
+
+input[type=file] {
+    outline: 0;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+.label {
+    width: 170px;
+    border: 2px dashed grey;
+    border-radius: 5px;
+    display: block;
+    padding: 1.2em;
+    transition: border 300ms ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.label i {
+    display: block;
+    font-size: 42px;
+    padding-bottom: 16px;
+}
+
+.label i,
+.label .title {
+    color: grey;
+    transition: 200ms color;
+}
+
+.label:hover {
+    border: 2px solid black;
+}
+
+.label:hover i,
+.label:hover .title {
+    color: black;
+}
+
+#img1 {
+    display: none;
+}
+
+#imagen1 .papelera {
+    display: none;
+}
+
+#img2 {
+    display: none;
+}
+
+#imagen2 .papelera {
+    display: none;
+}
+
+#img3 {
+    display: none;
+}
+
+#imagen3 .papelera {
+    display: none;
+}
+
+#imagenMostrada {
+    border: black solid 1px;
+}
