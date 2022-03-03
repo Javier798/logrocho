@@ -114,9 +114,6 @@ if(validarEmail(email)){
             });
         }
     });
-    setTimeout(() => {
-        window.location.reload();
-      }, 100);  
 }else{
     document.getElementById("emailUsuario").style.color="red";
 }

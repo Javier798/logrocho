@@ -85,7 +85,7 @@
     <div id="parteInferior">
         <div id="resenias">
             <div id="titulos">
-                <h4 id="tituloResenias" onclick="mostrarResenas(this)">Resenias</h4>
+                <h4 id="tituloResenias" onclick="mostrarResenas(this)">Reseñas</h4>
                 <h4 id="tituloLikes" onclick="mostrarLikes(this)">Likes</h4>
             </div>
             <div id="agrupacionResenias">
