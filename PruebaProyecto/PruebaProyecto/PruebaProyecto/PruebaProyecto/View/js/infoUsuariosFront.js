@@ -477,7 +477,7 @@ function eliminarResena(id) {
         url: "bajaResena",
         data: { id: id },
         success: function (response) {
-            window.location.reload();
+            mostrarDatos();
         }
     });
 }
