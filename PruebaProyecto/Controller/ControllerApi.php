@@ -261,7 +261,13 @@ public function imagenesMasVotadas()
         array_push($datos, $ids);
         array_push($datos, $resenias);
         echo json_encode($datos);
-    }
+    }    
+    /**
+     * getIdUsuario
+     *
+     * @param  mixed $email
+     * @return void
+     */
     public function getIdUsuario($email)
     {
         $gestor = new bd(Conexion::getConexion(host, bdname, user, password));
@@ -327,7 +333,13 @@ public function imagenesMasVotadas()
         array_push($datos, $pinchos);
 
         echo json_encode($datos);
-    }
+    }    
+    /**
+     * getPinchosPorBar
+     *
+     * @param  mixed $id
+     * @return void
+     */
     public function getPinchosPorBar($id)
     {
         $gestor = new bd(Conexion::getConexion(host, bdname, user, password));
@@ -584,7 +596,16 @@ public function imagenesMasVotadas()
         }
         echo json_encode($datos);
     }
-
+    
+    /**
+     * getResenasPorUsuarioLikeLimit
+     *
+     * @param  mixed $ordenacion
+     * @param  mixed $indice
+     * @param  mixed $cantidad
+     * @param  mixed $id
+     * @return void
+     */
     function getResenasPorUsuarioLikeLimit($ordenacion, $indice, $cantidad, $id)
     {
         $gestor = new bd(Conexion::getConexion(host, bdname, user, password));
@@ -633,7 +654,13 @@ public function imagenesMasVotadas()
         }
         echo json_encode($datos);
     }
-    
+        
+    /**
+     * resBaresPinchos
+     *
+     * @param  mixed $token
+     * @return void
+     */
     public function resBaresPinchos($token)
     {
         $gestor = new bd(Conexion::getConexion(host, bdname, user, password));

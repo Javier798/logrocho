@@ -58,10 +58,14 @@ function construirFila(datos, n) {
     superior.appendChild(h4);
     bar.appendChild(superior);
     bar.appendChild(inferior);
-    var marker
+    var marker;
+
     bar.addEventListener("click", () => {
         if (marker == undefined) {
             marker = L.marker([parseFloat(datos.Longitud), parseFloat(datos.Latitud)]);
+                marker.addEventListener("click",()=>{
+window.location="mostrarInfoBaresFront?id="+datos.Cod_bar;
+    });
             marker.addTo(mymap);
         } else {
             marker.remove();
