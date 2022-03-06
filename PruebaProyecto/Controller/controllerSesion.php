@@ -278,7 +278,13 @@ class controllerSesion
         $error404=$this->getRuta("error404",$accionActual);
         $error500=$this->getRuta("error500",$accionActual);
         require("View/aniadirUsuario.php");
-    }  
+    }      
+    /**
+     * mostraranadirBares
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function mostraranadirBares($accionActual)
     {
         $usuarios = $this->getRuta("/listadoUsuarios",$accionActual);
@@ -290,7 +296,13 @@ class controllerSesion
         $error404=$this->getRuta("error404",$accionActual);
         $error500=$this->getRuta("error500",$accionActual);
         require("View/aniadirBar.php");
-    }  
+    }      
+    /**
+     * mostrlistadoBaresFront
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function mostrlistadoBaresFront($accionActual)
     {
         $bares= $this->getRuta("/mostrarBaresFront",$accionActual);
@@ -301,7 +313,13 @@ class controllerSesion
         $home= $this->getRuta("/home",$accionActual);
         $pinchos= $this->getRuta("/mostrarPinchosFront",$accionActual);
         require("View/listadoBaresFront.php");
-    }  
+    }      
+    /**
+     * mostrlistadoPinchosFront
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function mostrlistadoPinchosFront($accionActual)
     {
         $bares= $this->getRuta("/mostrarBaresFront",$accionActual);
@@ -312,12 +330,24 @@ class controllerSesion
         $home= $this->getRuta("/home",$accionActual);
         $pinchos= $this->getRuta("/mostrarPinchosFront",$accionActual);
         require("View/listadoPinchosFront.php");
-    }  
+    }      
+    /**
+     * mostrRegistro
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function mostrRegistro($accionActual)
     {
         
         require("View/registro.php");
-    }  
+    }      
+    /**
+     * mostrarInfoUsuarioFront
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function mostrarInfoUsuarioFront($accionActual)
     {
         $bares= $this->getRuta("/mostrarBaresFront",$accionActual);
@@ -329,7 +359,13 @@ class controllerSesion
         $pinchos= $this->getRuta("/mostrarPinchosFront",$accionActual);
         require("View/infoUsuarioFront.php");
     }
-    
+        
+    /**
+     * mostraraniadirPincho
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function mostraraniadirPincho($accionActual)
     {
         $usuarios = $this->getRuta("/listadoUsuarios",$accionActual);
@@ -341,7 +377,13 @@ class controllerSesion
         $error404=$this->getRuta("error404",$accionActual);
         $error500=$this->getRuta("error500",$accionActual);
         require("View/aniadirPincho.php");
-    }
+    }    
+    /**
+     * mostrarLoginFront
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function mostrarLoginFront($accionActual)
     {
         $registro =$this->getRuta("/registro",$accionActual);
@@ -480,7 +522,13 @@ class controllerSesion
     {
         session_destroy();
         header("Location: ".$this->getRuta("/loginFront",$accionActual));
-    }
+    }    
+    /**
+     * home
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function home($accionActual)
     {
         $bares= $this->getRuta("/mostrarBaresFront",$accionActual);
@@ -491,7 +539,13 @@ class controllerSesion
         $perfil= $this->getRuta("/mostrarInfoUsuarioFront?id=".$_SESSION["codigo_usuaraio"],$accionActual);
         $pinchos= $this->getRuta("/mostrarPinchosFront",$accionActual);
         require("View/home.php");
-    }
+    }    
+    /**
+     * mostrarMapa
+     *
+     * @param  mixed $accionActual
+     * @return void
+     */
     public function mostrarMapa($accionActual)
     {
         $bares= $this->getRuta("/mostrarBaresFront",$accionActual);

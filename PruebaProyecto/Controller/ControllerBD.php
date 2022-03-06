@@ -454,7 +454,13 @@ class controllerBD
         }
         $gestor = new bd(Conexion::getConexion(host, bdname, user, password));
         $gestor->bajaImnagenUsuario($id,$ruta);
-    }
+    }    
+    /**
+     * borrarLikes
+     *
+     * @param  mixed $id
+     * @return void
+     */
     public function borrarLikes($id)
     {
         $gestor = new bd(Conexion::getConexion(host, bdname, user, password));

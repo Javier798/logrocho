@@ -48,7 +48,7 @@ if (isset($array_ruta[0]) && $array_ruta[0] == "login") {
     $indice = $_POST["indice"];
     $cantidad = $_POST["cantidad"];
     $puntuacion = $_POST["puntuacion"];
-    $puntuacionmax = $_POST["puntuacionmax"];
+    $puntuacionmax = $_POST["puntuacionmax"];s
     $filtro = $_POST["filtro"];
     $controllerApi->getBaresLimit($ordenacion, $indice, $cantidad,$puntuacion,$puntuacionmax,$filtro);
 } else if (isset($array_ruta[0]) && $array_ruta[0] == "getPinchoLimit") {
@@ -299,4 +299,6 @@ else if (isset($array_ruta[0]) && $array_ruta[0] == "getPinchosPorBarFront") {
     $controllerApi->imagenesMasValoradas();
 }else if (isset($array_ruta[0]) && $array_ruta[0] == "imagenesMasVotadas") {
     $controllerApi->imagenesMasVotadas();
+}else if (isset($array_ruta[0]) && $array_ruta[0] == "reseniasYPOinchosMejorValorados") {
+    $controllerApi->reseniasYPOinchosMejorValorados();
 }

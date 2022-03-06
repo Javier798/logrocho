@@ -664,10 +664,28 @@ public function imagenesMasVotadas()
     public function resBaresPinchos($token)
     {
         $gestor = new bd(Conexion::getConexion(host, bdname, user, password));
-        $result = $gestor->buscarPinchosBares($token);
+        $result = $gestor->buscarPinchosGlobal($token);
         $datos = [];
-        foreach ($result as $resenia) {
-            array_push($datos, $resenia);
+        foreach ($result as $pincho) {
+            $pinchoRes=[];
+            $pinchoRes["Cod_pincho"] = $pincho["Cod_pincho"];
+            $pinchoRes["Nombre"] = $pincho["Nombre"];
+            $pinchoRes["Descripcion"] = $pincho["Descripcion"];
+            $pinchoRes["Fk_bar"] = $pincho["Fk_bar"];
+            $pinchoRes["Puntuacion"] = $pincho["Puntuacion"];
+            array_push($datos, $pinchoRes);
+        }
+        $result = $gestor->buscarBaresGlobal($token);
+        foreach ($result as $bar) {
+            $barRes=[];
+            $barRes["Cod_bar"] = $bar["Cod_bar"];
+            $barRes["Nombre"] = $bar["Nombre"];
+            $barRes["Localizacion"] = $bar["Localizacion"];
+            $barRes["Puntuacion"] = $bar["Puntuacion"];
+            $barRes["Descripcion"] = $bar["Descripcion"];
+            $barRes["Longitud"] = $bar["Longitud"];
+            $barRes["Latitud"] = $bar["Latitud"];
+            array_push($datos, $barRes);
         }
         echo json_encode($datos);
     }
@@ -690,6 +708,35 @@ public function imagenesMasVotadas()
             $reseniaRes["Fk_pinchos"] = $resenia["Fk_pinchos"];
             $reseniaRes["Fk_usuarios"] = $resenia["Fk_usuarios"];
             array_push($datos, $reseniaRes);
+        }
+        echo json_encode($datos);
+    }
+    public function reseniasYPOinchosMejorValorados()
+    {
+        $gestor = new bd(Conexion::getConexion(host, bdname, user, password));
+        $result = $gestor->reseniasMasValoradas();
+        $datos = [];
+
+        foreach ($result as $resenia) {
+            $reseniaRes = [];
+            $reseniaRes["Cod_resena"] = $resenia["Cod_resenia"];
+            $reseniaRes["Mensaje"] = $resenia["Mensaje"];
+            $reseniaRes["Valoracion"] = $resenia["Valoracion"];
+            $reseniaRes["Fk_pinchos"] = $resenia["Fk_pinchos"];
+            $reseniaRes["Fk_usuarios"] = $resenia["Fk_usuarios"];
+            array_push($datos, $reseniaRes);
+        }
+        $result = $gestor->pinchosMasValoradas();
+        foreach ($result as $pincho ) {
+            $pinchoRes = [];
+            $pinchoRes["Cod_pincho"] = $pincho["Cod_pincho"];
+            $pinchoRes["Nombre"] = $pincho["Nombre"];
+            $pinchoRes["Descripcion"] = $pincho["Descripcion"];
+            $pinchoRes["Fk_bar"] = $pincho["Fk_bar"];
+            $pinchoRes["Ruta"] = $pincho["ruta"];
+            $pinchoRes["NombreBar"] = $pincho["NombreBar"];
+            $pinchoRes["Puntuacion"] = $pincho["Puntuacion"];
+            array_push($datos, $pinchoRes);
         }
         echo json_encode($datos);
     }

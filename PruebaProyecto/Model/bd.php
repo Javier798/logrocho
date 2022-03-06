@@ -36,13 +36,17 @@ class bd
         
         return $libros;
     }
-    public function buscarPinchosBares($token)
+    public function buscarPinchosGlobal($token)
     {
-        $sql = "select * from bares b, pinchos p WHERE b.Nombre LIKE '%".$token."%' OR b.Descripcion LIKE '%".$token."%' or p.Nombre LIKE '%".$token."%' or p.Descripcion LIKE '%".$token."%'";
+        $sql = "select * from  pinchos p WHERE p.Nombre LIKE '%".$token."%' or p.Descripcion LIKE '%".$token."%' or p.Cod_pincho in (select Fk_pinchos from resenia where Mensaje LIKE '%".$token."%')";
         $libros = $this->conexion->query($sql);
         return $libros;
     }
-    
+    public function buscarBaresGlobal($token){
+        $sql = "select * from bares b WHERE b.Nombre LIKE '%".$token."%' OR b.Descripcion LIKE '%".$token."%'";
+        $libros = $this->conexion->query($sql);
+        return $libros;
+    }
     /**
      * imagenesMasValoradas
      *
@@ -1004,5 +1008,17 @@ var_dump($array);
 
             echo $e->getMessage();
         }
+    }
+    public function reseniasMasValoradas()
+    {
+        $sql = "Select * from resenias order by valoracion desc ;";
+            $resultado = $this->conexion->query($sql);
+            return $resultado;
+    }
+    public function pinchosMasValoradas()
+    {
+        $sql = "Select *,(select avg(valoracion) from resenia where Fk_pinchos=Cod_pincho) as valoracion from pinchos where Cod_pincho in (select Fk_pinchos from resenia where Fk_pinchos=Cod_pincho) order by valoracion desc ;";
+            $resultado = $this->conexion->query($sql);
+            return $resultado;
     }
 }
